@@ -1,0 +1,67 @@
+{
+  "name": "ts-lib-template",
+  "version": "1.0.0",
+  "description": "TypeScript lib template",
+  "author": "Dennis Kaffer <kafferdennis@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "lint": "eslint ./src --ext .ts",
+    "watch": "rollup -cw",
+    "build": "yarn clean & rollup -c",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint ./src --ext .ts --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "rollup": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "typescript": "^3.8.3",
+    "@types/jest": "^25.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^2.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "lint-staged": "^10.0.8",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.19.1",
+    "prettier-standard": "^16.2.1",
+    "rimraf": "^3.0.2",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0"
+  }
+}

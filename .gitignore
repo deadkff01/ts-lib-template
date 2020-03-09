@@ -1,0 +1,4 @@
+/node_modules
+!test/sample/dts/node_modules
+test/**/*.out
+*.log

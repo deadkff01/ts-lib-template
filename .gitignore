@@ -1,4 +1,6 @@
 /node_modules
+/dist
+/lib
 !test/sample/dts/node_modules
 test/**/*.out
 *.log
